@@ -1,0 +1,25 @@
+{
+    "name": "mocha-node-test",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test-mocha": "mocha tests/mocha.test.ts",
+        "test-node": "node --require ts-node/register/transpile-only --test --test-concurrency=8 tests/node.test.ts",
+        "benchmark": "hyperfine --warmup 20 --runs 10 'yarn test-mocha' 'yarn test-node'"
+    },
+    "keywords": [],
+    "author": "tduyng",
+    "license": "Apache-2.0",
+    "description": "Reproduce issue node:test performance",
+    "devDependencies": {
+        "@types/mocha": "^10.0.7",
+        "@types/node": "^22.1.0",
+        "@types/sinon": "^17.0.3",
+        "expect": "^29.7.0",
+        "mocha": "^10.7.0",
+        "mocha-param": "^2.0.1",
+        "sinon": "^18.0.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.4"
+    }
+}
