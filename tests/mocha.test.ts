@@ -4,6 +4,8 @@ import { expect } from 'expect'
 import itParam from 'mocha-param'
 import * as core from '../src/index'
 
+const NB_TESTS = 5000
+
 describe('src > index', () => {
     describe('fetchData', () => {
         const sandbox = createSandbox()
@@ -21,7 +23,7 @@ describe('src > index', () => {
         })
 
         const url = 'http://example.com'
-        const testCases = Array.from({ length: 100 })
+        const testCases = Array.from({ length: NB_TESTS })
 
         itParam('should fetch data and process it', testCases, async () => {
             const data = { some: 'data' }
@@ -60,7 +62,7 @@ describe('src > index', () => {
         const date = new Date('2024-08-08T00:00:00Z')
         const testCases: ({ input: Record<string, unknown> } & Record<string, unknown>)[] = []
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < NB_TESTS; i++) {
             testCases.push({
                 description: `should return processed data with additional info - case ${i + 1}`,
                 input: { info: `some info ${i + 1}` },

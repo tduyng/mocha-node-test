@@ -5,7 +5,7 @@
     "scripts": {
         "test-mocha": "mocha tests/mocha.test.ts",
         "test-node": "node --require ts-node/register/transpile-only --test --test-concurrency=8 tests/node.test.ts",
-        "benchmark": "hyperfine --warmup 20 --runs 10 'yarn test-mocha' 'yarn test-node'"
+        "benchmark": "hyperfine --warmup 1 'yarn test-mocha' 'yarn test-node'"
     },
     "keywords": [],
     "author": "tduyng",
