@@ -22,28 +22,28 @@ After migration:
 
 ## Benchmark results
 
-So far, we have not been able to reproduce the significant performance issues in this simplified project. The benchmarks indicate that the performance difference between `mocha` and `node:test` in this repository is negligible.
+So far, we have not been able to reproduce the significant performance issues in this simplified project. The benchmarks indicate that the performance difference between `mocha` and `node:test` in this repository is not really big like in our project.
 
 (Run on MacBook Pro amd 2019 - 6 cores - 16GB RAM)
 
 ### Node.js v22.8.0
-- Run for 10000 tests
+- Run for 18000 tests
 
 ```bash
 ❯ npm run benchmark
 
 > mocha-node-test@1.0.0 benchmark
-> hyperfine --warmup 1 'yarn test-mocha' 'yarn test-node'
+> hyperfine --warmup 1 'npm run test-mocha' 'npm run test-node'
 
-Benchmark 1: yarn test-mocha
-  Time (mean ± σ):     12.832 s ±  1.306 s    [User: 10.827 s, System: 1.085 s]
-  Range (min … max):   10.386 s … 14.292 s    10 runs
+Benchmark 1: npm run test-mocha
+  Time (mean ± σ):      7.985 s ±  0.339 s    [User: 6.225 s, System: 0.707 s]
+  Range (min … max):    7.437 s …  8.475 s    10 runs
 
-Benchmark 2: yarn test-node
-  Time (mean ± σ):     24.628 s ±  9.719 s    [User: 24.773 s, System: 1.795 s]
-  Range (min … max):   17.392 s … 47.207 s    10 runs
+Benchmark 2: npm run test-node
+  Time (mean ± σ):     11.461 s ±  1.490 s    [User: 12.721 s, System: 0.843 s]
+  Range (min … max):    9.787 s … 14.054 s    10 runs
 
 Summary
-  yarn test-mocha ran
-    1.92 ± 0.78 times faster than yarn test-node
+  npm run test-mocha ran
+    1.44 ± 0.20 times faster than npm run test-node
 ```
